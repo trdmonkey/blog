@@ -13,7 +13,8 @@
             <li class="nav-item">
                 <a class="nav-link  active" href="index.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa fa-home text-white text-lg"></i>
+                        <!-- <i class="fa fa-home text-dark text-lg"></i> -->
+                        <i class="fa fa-tachometer text-dark text-lg" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Inicio</span>
                 </a>
@@ -25,7 +26,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="enquiries.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa fa-bullhorn text-white text-lg"></i>
+                        <!-- <i class="fa fa-bullhorn text-white text-lg"></i> -->
+                        <i class="fa fa-coffee text-dark text-lg" aria-hidden="true"></i>
+
                     </div>
                     <span class="nav-link-text ms-1">Consultas</span>
                 </a>
@@ -37,8 +40,7 @@
             <li class="nav-item">
                 <a class="nav-link  " href="services.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <!-- <i class="fa fa-cogs text-white text-lg"></i> -->
-                        <i class="fa fa-cogs text-white text-lg" aria-hidden="true"></i>
+                        <i class="fa fa-tty text-dark text-lg" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Servicios</span>
                 </a>
@@ -50,8 +52,7 @@
             <li class="nav-item">
                 <a class="nav-link  " href="users.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <!-- <i class="fa fa-cogs text-white text-lg"></i> -->
-                        <i class="fa fa-user-plus text-white text-lg" aria-hidden="true"></i>
+                        <i class="fa fa-user-circle-o text-dark text-lg" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Admin | Usuarios</span>
                 </a>
@@ -60,7 +61,7 @@
                 <a class="nav-link  " href="social-media.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <!-- <i class="fa fa-cogs text-white text-lg"></i> -->
-                        <i class="fa fa-user-plus text-white text-lg" aria-hidden="true"></i>
+                        <i class="fa fa-superpowers text-dark text-lg" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Medios</span>
                 </a>
@@ -69,7 +70,7 @@
                 <a class="nav-link  " href="settings.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <!-- <i class="fa fa-cogs text-white text-lg"></i> -->
-                        <i class="fa fa-user-plus text-white text-lg" aria-hidden="true"></i>
+                        <i class="fa fa-cogs text-dark text-lg" aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Ajustes</span>
                 </a>
@@ -79,7 +80,7 @@
         </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
-        <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
+        <!-- <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
             <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
             <div class="card-body text-start p-3 w-100">
                 <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
@@ -91,7 +92,7 @@
                     <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <a class="btn bg-gradient-primary mt-3 w-100" href="logout.php">logout</a>
     </div>
 </aside>

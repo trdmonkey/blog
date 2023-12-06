@@ -5,13 +5,13 @@
         <div class="card">
             <div class="card-header">
                 <h4>
-                    Agregar Usuarios
+                    Editar Usuarios
                     <a href="users.php" class="btn btn-danger float-end">Regresar</a>
                 </h4>
             </div>
             <div class="card-body">
 
-                <form action="code.php" method="POST">
+                <form action="">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
@@ -49,7 +49,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="mb-3">
-                                <label>Privado</label>
+                                <label>Rol</label>
                                 <br/>
                                 <input type="checkbox" name="is_ban" style="width:30px;height:30px" />
                             </div>
@@ -57,7 +57,7 @@
                         <div class="col-md-6">
                             <div class="mb-3 text-end">
                                 <br/>
-                                <button type="submit" name="saveUser" class="btn btn-primary">Agregar</button>
+                                <button type="submit" name="updateUser" class="btn btn-primary">Actualizar</button>
                             </div>
                         </div>
                     </div>

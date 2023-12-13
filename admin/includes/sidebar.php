@@ -2,8 +2,8 @@
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="https://jorge-luis.netlify.app/" target="_blank">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX0x15dcHy02aDGHJQkktHoAzJiz2cCjyAZvUYDePMff3mm-Ah1LBsIeK6Fl9pTP3JxfE&usqp=CAU" class="navbar-brand-img h-100" alt="main_logo">
-            <span class="ms-1 font-weight-bold">net</span>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX0x15dcHy02aDGHJQkktHoAzJiz2cCjyAZvUYDePMff3mm-Ah1LBsIeK6Fl9pTP3JxfE&usqp=CAU" style="border-radius: 5px;" class="navbar-brand-img h-100" alt="main_logo">
+            <span class="ms-1 font-weight-bold" style="font-weight: bold; letter-spacing: 1px;">.net</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">

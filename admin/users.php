@@ -20,20 +20,47 @@
                             <th>Nombre</th>
                             <th>Email</th>
                             <th>Telefono</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
                             <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>name</td>
-                            <td>email</td>
-                            <td>phone</td>
-                            <td>
-                                <a href="users-edit.php" class="btn btn-success btn-sm">Editar</a>
-                                <a href="users.delete.php" class="btn btn-danger btn-sm mx-2">Eliminar</a>
-                            </td>
-                        </tr>
+                        
+                        <?php
+                        
+                        $users = getAll('users');
+                        if(mysqli_num_rows($users) > 0) {
+
+                            foreach($users as $userItem) {
+                                ?>
+                                <tr>
+                                    <td><?= $userItem['id']; ?></td>
+                                    <td><?= $userItem['name']; ?></td>
+                                    <td><?= $userItem['email']; ?></td>
+                                    <td><?= $userItem['phone']; ?></td>
+                                    <td><?= $userItem['role']; ?></td>
+                                    <td><?= $userItem['is_ban'] == 1 ? 'Inactivo' : 'Activo' ; ?></td>
+                                    <td>
+                                        <a href="users-edit.php?id=<?= $userItem['id']; ?>" class="btn btn-success btn-sm">Editar</a>
+                                        <a href="users.delete.php" class="btn btn-danger btn-sm mx-2">Eliminar</a>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+
+                        } else {
+
+                            ?>
+                            <tr>
+                                <td colspan="7">Registros no encontrados.</td>
+                            </tr>
+                            <?php
+
+                        }
+
+                        ?>
+
                     </tbody>
                 </table>
 

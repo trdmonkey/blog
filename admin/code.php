@@ -61,9 +61,9 @@ if(isset($_POST['updateUser'])) {
 
         $result = mysqli_query($conn, $query);
         if($result) {
-            redirect('users-edit.php?id='.$userId,'User/Admin Actualizado Exitosamente.');
+            redirect('users.php','User/Admin Actualizado Exitosamente.');
         } else {
-            redirect('users-create.php','Algo salio mal.');
+            redirect('users-edit.php?id='.$userId,'Algo salio mal.');
         }
 
 

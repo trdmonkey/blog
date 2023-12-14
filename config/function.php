@@ -8,7 +8,8 @@ function validate($inputData) {
 
     global $conn;
 
-    return mysqli_real_escape_string($conn, $inputData);
+    $validatedData = mysqli_real_escape_string($conn, $inputData);
+    return trim($validatedData);
 
 }
 
@@ -98,6 +99,19 @@ function getById($tableName, $id) {
         return $response;
 
     }
+
+}
+
+function deleteQuery($tableName, $id) {
+
+    global $conn;
+
+    $table = validate($tableName);
+    $id = validate($id);
+
+    $query = "DELETE FROM $table WHERE id='$id' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+    return $result;
 
 }
 

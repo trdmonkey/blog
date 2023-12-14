@@ -43,7 +43,12 @@
                                     <td><?= $userItem['is_ban'] == 1 ? 'Inactivo' : 'Activo' ; ?></td>
                                     <td>
                                         <a href="users-edit.php?id=<?= $userItem['id']; ?>" class="btn btn-success btn-sm">Editar</a>
-                                        <a href="users.delete.php" class="btn btn-danger btn-sm mx-2">Eliminar</a>
+                                        <a href="users.delete.php?id=<?= $userItem['id']; ?>" 
+                                            class="btn btn-danger btn-sm mx-2" 
+                                            onclick="return confirm('Esta seguro de eliminar este registro?')"
+                                            >
+                                            Eliminar
+                                        </a>
                                     </td>
                                 </tr>
                                 <?php

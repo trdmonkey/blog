@@ -5,6 +5,7 @@ include('includes/header.php');
 
 ?>
 
+<?= alertMessage(); ?>
 
 
 

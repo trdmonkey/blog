@@ -39,6 +39,12 @@ if(isset($_POST['loginBtn'])) {
 
                 } else {
 
+                    if($row['is_ban'] == 1) {
+
+                        redirect('login.php','Tu cuenta esta inactiva. Por favor contacta al administrador.');
+
+                    }
+
                     $_SESSION['auth'] = true;
                     $_SESSION['loggedInUserRole'] = $row['role'];
                     $_SESSION['loggedInUser'] = [

@@ -3,6 +3,11 @@
 $pageTitle = "Inicia Sesión";
 include('includes/header.php');
 
+if(isset($_SESSION['auth'])) {
+    redirect('index.php','Ya se ha autenticado.');
+}
+
+
 ?>
 
 <div class="container mt-5">

@@ -1,5 +1,5 @@
 
-
+    <?php include('footer-content.php'); ?>
 
 
     <!-- BOOTSTRAP JS FILES -->

@@ -5,7 +5,13 @@ include('includes/header.php');
 
 ?>
 
-<?= alertMessage(); ?>
+
+<div class="py-5">
+    <div class="container">
+        <?= alertMessage(); ?>
+        <h4>Pagina de Inicio</h4>
+    </div>
+</div>
 
 
 

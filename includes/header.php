@@ -9,8 +9,11 @@
     <link rel="icon" type="image/png" href="admin/assets/img/logo-ct.png">
 
     <title>
-        <?php if(isset($pageTitle)) { echo $pageTitle; }else{ echo 'Trdmonkey net'; } ?>
+        <?php if(isset($pageTitle)) { echo $pageTitle; }else{ echo webSetting('title') ?? 'trdmonkey net' ; } ?>
     </title>
+
+    <meta name="description" content="<?= webSetting('meta_description') ?? 'Meta Desc'; ?>">
+    <meta name="keyword" content="<?= webSetting('meta_keyword') ?? 'Meta Keyword'; ?>">
 
     <!-- BOOTSTRAP CSS FILES -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">

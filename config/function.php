@@ -13,6 +13,17 @@ function validate($inputData) {
 
 }
 
+function webSetting($columnName) {
+
+    $setting = getById('settings',1);
+    if($setting['status'] == 200) {
+
+        return $setting['data'][$columnName];
+
+    }
+
+}
+
 function logoutSession() {
     unset($_SESSION['auth']);
     unset($_SESSION['loggedInUserRole']);

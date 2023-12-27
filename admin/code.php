@@ -183,6 +183,57 @@ if(isset($_POST['updateSocialMedia'])) {
 
 }
 
+if(isset($_POST['saveService'])) {
+    $name = validate($_POST['name']);
+
+    $slug = str_replace(' ', '-', strtolower($name));
+    $small_description = validate($_POST['small_description']);
+    $long_description = validate($_POST['long_description']);
+
+    if($_FILES['image']['size'] > 0) {
+
+        $image = $_FILES['image']['name'];
+
+        $imgFileTypes = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+        if($imgFileTypes != 'jpg' && $imgFileTypes != 'jpeg' && $imgFileTypes != 'png') {
+
+            redirect('services.php','Lo sentimos, solo imagenes en formato .jpg o .jpeg o .png');
+
+        }
+
+        $path = "../assets/uploads/services/";
+        $imgExt = pathinfo($image, PATHINFO_EXTENSION);
+        $filename = time().'.'.$imgExt;
+
+        $finalImage = 'assets/uploads/services/'.$filename;
+
+    } else {
+        $finalImage = NULL;
+    }
+
+    $meta_title = validate($_POST['meta_title']);
+    $meta_description = validate($_POST['meta_description']);
+    $meta_keyword = validate($_POST['meta_keyword']);
+
+    $status = validate($_POST['status']) == true ? '1' : '0';
+
+    $query = "INSERT INTO services (name, slug, small_description, long_description, image, meta_title, meta_description, meta_keyword, status) 
+        VALUES ('$name','$slug','$small_description','$long_description','$finalImage','$meta_title','$meta_description','$meta_keyword','$status')";
+
+    $result = mysqli_query($conn, $query);
+    if($result) {
+
+        if($_FILES['image']['size'] > 0) {
+            move_uploaded_file($_FILES['image']['tmp_name'], $path.$filename);
+        }
+        redirect('services.php','Servicios Agregadoss Satisfactoriamente.');
+
+    } else {
+        redirect('services.php','Algo salio mal!');
+    }
+    
+}
+
 
 
 ?>

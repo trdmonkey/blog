@@ -57,6 +57,41 @@ $rowData = mysqli_fetch_assoc($result);
                     </p>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="card sticky-top" style="top: 120px;">
+                    <div class="card-header bg-bg-body-tertiary">
+                        <h5 class="text-muted mb-0">Preguntar ahora</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="code.php" method="POST">
+
+                            <div class="mb-3">
+                                <label>Nombre</label>
+                                <input type="text" name="name" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label>Telefono</label>
+                                <input type="text" name="phone" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label>Servicio</label>
+                                <input type="text" name="service" readonly value="<?= $rowData['name']; ?>" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label>Mensaje / Comentario</label>
+                                <textarea name="message" class="form-control" rows="3"></textarea>
+                            </div>
+
+                            <button type="submit" name="enquireBtn" class="btn w-100 btn-primary">Enviar</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

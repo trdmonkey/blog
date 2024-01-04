@@ -33,6 +33,9 @@ include('authentication.php');
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
+  <!-- CDN DATATABLES CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -44,4 +47,3 @@ include('authentication.php');
     <?php include('navbar.php'); ?>
 
     <div class="container-fluid py-4">
-      

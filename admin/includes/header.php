@@ -28,14 +28,20 @@ include('authentication.php');
 
   <!-- CSS Files -->
   <link id="pagestyle" href="assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+
+  <!-- CDN SUMMERNOTE CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
 
-    <?php include('sidebar.php'); ?>
+  <?php include('sidebar.php'); ?>
 
-        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
 
-            <?php include('navbar.php'); ?>
+    <?php include('navbar.php'); ?>
 
-                <div class="container-fluid py-4">
+    <div class="container-fluid py-4">
+      

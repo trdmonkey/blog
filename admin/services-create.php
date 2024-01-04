@@ -25,7 +25,7 @@
                     </div>
                     <div class="mb-3">
                         <label>Descripción</label>
-                        <textarea name="long_description" class="form-control" rows="3"></textarea>
+                        <textarea name="long_description" class="form-control mySummernote" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
                         <label>Imagen</label>

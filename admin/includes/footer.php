@@ -102,12 +102,26 @@
     </div>
 </div>
 
+<!-- CDN JQUERY JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <!--   Core JS Files   -->
 <script src="assets/js/core/popper.min.js"></script>
 <script src="assets/js/core/bootstrap.min.js"></script>
 <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
 <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
 <script src="assets/js/plugins/chartjs.min.js"></script>
+
+<!-- CDN SUMMERNOTES JS -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".mySummernote").summernote({
+            height: 250
+        });
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
 
 <script>
     var win = navigator.platform.indexOf('Win') > -1;

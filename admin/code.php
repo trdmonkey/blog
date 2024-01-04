@@ -304,6 +304,24 @@ if(isset($_POST['updateService'])) {
 
 }
 
+if(isset($_POST['updateEnquiryStatus'])) {
+
+    $enquiryId = validate($_POST['enquiryId']);
+    $status = validate($_POST['status']);
+
+    $query = "UPDATE enquires SET status='$status' WHERE id='$enquiryId'";
+    $result = mysqli_query($conn, $query);
+
+    if($result){
+        redirect('enquires-view.php?id='.$enquiryId,'Estado Actualizado!');
+    } else {
+        redirect('enquires-view.php?id='.$enquiryId,'Algo salio mal!');
+    }
+
+
+}
+
+
 
 
 ?>

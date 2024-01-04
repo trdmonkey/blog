@@ -26,7 +26,10 @@
                     <tbody>
                         <?php
                         
-                        $enquires = getAll('enquires');
+                        // $enquires = getAll('enquires');
+
+                        /* VAMOS A OBTENER LA CONSULTA FILTRADA POR ID DESC */
+                        $enquires = mysqli_query($conn, "SELECT * FROM enquires ORDER BY id DESC");
 
                         if($enquires) {
                             if(mysqli_num_rows($enquires) > 0) {

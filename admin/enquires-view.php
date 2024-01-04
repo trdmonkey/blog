@@ -11,6 +11,8 @@
             </div>
             <div class="card-body">
 
+                <?= alertMessage(); ?>
+
                 <?php
                 $paramResult = checkParamId('id');
                 if(!is_numeric($paramResult)) {
@@ -62,19 +64,20 @@
                     </table>
 
                     <div class="mt-3">
-                        <div class="card card-body">
-                            <form action="code.php" method="POST">
+                        <div class="card border card-body">
+                            <form action="code.php" method="POST"> <!-- FORM para Actualizar el estado -->
+                                <input type="hidden" name="enquiryId" value="<?= $enquiry['data']['id']; ?>" />
                                 <div class="row">
                                     <div class="col-md-4">
                                         <label>Actualizar Estado</label>
-                                        <select name="name" id="" class="form-select">
+                                        <select name="status" id="" class="form-select">
                                             <option disabled selected>Seleccione una opción</option>
-                                            <option value="Pendiente">Pendiente</option>
-                                            <option value="Completado">Completado</option>
-                                            <option value="Cancelado">Cancelado</option>
+                                            <option value="Pendiente" <?= $enquiry['data']['status'] == 'Pendiente' ? 'selected' : '' ; ?> >Pendiente</option>
+                                            <option value="Completado" <?= $enquiry['data']['status'] == 'Completado' ? 'selected' : '' ; ?> >Completado</option>
+                                            <option value="Cancelado" <?= $enquiry['data']['status'] == 'Cancelado' ? 'selected' : '' ; ?> >Cancelado</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8"><br/>
                                         <button type="submit" name="updateEnquiryStatus" class="btn btn-primary">Actualizar</button>
                                     </div>
                                 </div>

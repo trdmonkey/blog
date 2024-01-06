@@ -13,7 +13,10 @@ if(isset($_POST['saveUser'])) {
 
     if($name != '' || $email != '' || $phone != '' || $password != '') {
 
-        $query = "INSERT INTO users (name,phone,email,password,is_ban,role) VALUES ('$name','$phone','$email','$password','$is_ban','$role')";
+        // Aqui vamos a HASHEAR la contraseña usando BIG CRIPT
+        $hachedPassword = password_hash($password, PASSWORD_ARGON2I);
+
+        $query = "INSERT INTO users (name,phone,email,password,is_ban,role) VALUES ('$name','$phone','$email','$hachedPassword','$is_ban','$role')";
 
         $result = mysqli_query($conn, $query);
         if($result) {
@@ -50,11 +53,13 @@ if(isset($_POST['updateUser'])) {
 
     if($name != '' || $email != '' || $phone != '' || $password != '') {
 
+        $hachedPassword = password_hash($password, PASSWORD_ARGON2I);
+
         $query = "UPDATE users SET 
             name='$name',
             phone='$phone',
             email='$email',
-            password='$password',
+            password='$hachedPassword',
             is_ban='$is_ban',
             role='$role' 
             WHERE id='$userId'";

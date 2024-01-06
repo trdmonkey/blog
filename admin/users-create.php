@@ -18,32 +18,32 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <input type="text" required name="name" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Telefono</label>
-                                <input type="text" name="phone" class="form-control">
+                                <input type="text" required name="phone" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" required name="email" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label>Contraseña</label>
-                                <input type="password" name="password" class="form-control">
+                                <input type="password" required name="password" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="mb-3">
                                 <label>Rol</label>
-                                <select name="role" class="form-select">
-                                    <option value="">Seleccione un rol</option>
+                                <select name="role" required class="form-select">
+                                    <option value="" disabled selected>Seleccione un rol</option>
                                     <option value="admin">Admin</option>
                                     <option value="user">Usuario</option>
                                 </select>

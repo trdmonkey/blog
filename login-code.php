@@ -12,7 +12,8 @@ if(isset($_POST['loginBtn'])) {
 
     if($email != '' && $password != '') {
 
-        $query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
+        // $query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
+        $query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
         $result = mysqli_query($conn, $query);
 
         if($result) {
@@ -20,6 +21,14 @@ if(isset($_POST['loginBtn'])) {
             if(mysqli_num_rows($result) == 1) {
 
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+                $hashedPassword = $row['password'];
+                if(!password_verify($password, $hashedPassword)) {
+
+                    redirect('login.php','Contraseña incorrecta.');
+
+                }
+
                 if($row['role'] == 'admin') {
 
                     if($row['is_ban'] == 1) {
@@ -57,7 +66,7 @@ if(isset($_POST['loginBtn'])) {
                 }
             } else {
 
-                redirect('login.php','Alguno de los datos es invalido.');
+                redirect('login.php','Email incorrecto.');
 
             }
         } else {

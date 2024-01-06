@@ -13,7 +13,7 @@ include('authentication.php');
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
   <title>
-    Trdmonkey Net
+    <?php if(isset($pageTitle)) { echo $pageTitle; }else{ echo webSetting('title') ?? 'trdmonkey net' ; } ?>
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />

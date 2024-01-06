@@ -1,4 +1,7 @@
-<?php include('includes/header.php'); ?>
+<?php 
+$pageTitle = "Inicio • Panel";
+include('includes/header.php'); 
+?>
 
 <div class="row">
 

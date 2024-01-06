@@ -30,7 +30,7 @@ $pageName = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Consultas</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $pageName == 'enquiries.php' ? 'active' : ''; ?>" href="enquiries.php">
+                <a class="nav-link <?= $pageName == 'enquiries.php' || $pageName == 'enquires-view.php' ? 'active' : ''; ?>" href="enquiries.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <!-- <i class="fa fa-bullhorn text-white text-lg"></i> -->
                         <i class="fa fa-coffee <?= $pageName == 'enquiries.php' ? 'text-white' : 'text-dark'; ?> text-lg" aria-hidden="true"></i>
@@ -44,7 +44,7 @@ $pageName = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Gestionar Servicios</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $pageName == 'services.php' ? 'active' : ''; ?>" href="services.php">
+                <a class="nav-link <?= $pageName == 'services.php' || $pageName == 'services-create.php' || $pageName == 'services-edit.php' ? 'active' : ''; ?>" href="services.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa fa-tty <?= $pageName == 'services.php' ? 'text-white' : 'text-dark'; ?> text-lg" aria-hidden="true"></i>
                     </div>
@@ -56,7 +56,7 @@ $pageName = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Administrador</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $pageName == 'users.php' ? 'active' : ''; ?>" href="users.php">
+                <a class="nav-link <?= $pageName == 'users.php' || $pageName == 'users-create.php' || $pageName == 'users-edit.php' ? 'active' : ''; ?>" href="users.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa fa-user-circle-o <?= $pageName == 'users.php' ? 'text-white' : 'text-dark'; ?> text-lg" aria-hidden="true"></i>
                     </div>
@@ -64,7 +64,7 @@ $pageName = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= $pageName == 'social-media.php' ? 'active' : ''; ?>" href="social-media.php">
+                <a class="nav-link <?= $pageName == 'social-media.php' || $pageName == 'social-media-create.php' || $pageName == 'social-media-edit.php' ? 'active' : ''; ?>" href="social-media.php">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <!-- <i class="fa fa-cogs text-white text-lg"></i> -->
                         <i class="fa fa-superpowers <?= $pageName == 'social-media.php' ? 'text-white' : 'text-dark'; ?> text-lg" aria-hidden="true"></i>

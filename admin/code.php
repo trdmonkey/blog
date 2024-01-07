@@ -9,21 +9,31 @@ if(isset($_POST['saveUser'])) {
     $email = validate($_POST['email']);
     $password = validate($_POST['password']);
     $role = validate($_POST['role']);
-    $is_ban = validate($_POST['is_ban']) == true ? 1:0;
+    $is_ban = isset($_POST['is_ban']) == true ? 1:0;
 
     if($name != '' || $email != '' || $phone != '' || $password != '') {
 
         // Aqui vamos a HASHEAR la contraseña usando BIG CRIPT
-        $hachedPassword = password_hash($password, PASSWORD_ARGON2I);
+        $hachedPassword = password_hash($password, PASSWORD_ARGON2I); // PASSWORD_BCRYPT = 60 bits | PASSWORD_ARGON2I = 96 bits 
 
-        $query = "INSERT INTO users (name,phone,email,password,is_ban,role) VALUES ('$name','$phone','$email','$hachedPassword','$is_ban','$role')";
+        $data = [
+            'name' => $name,
+            'phone' => $phone,
+            'email' => $email,
+            'password' => $hachedPassword,
+            'is_ban' => $is_ban,
+            'role' => $role
+        ];
 
-        $result = mysqli_query($conn, $query);
+        $result = insert('users', $data);
+        // echo $result;
+        
+        // $result = mysqli_query($conn, $query);
         if($result) {
             redirect('users.php','User/Admin Agregado Exitosamente.');
         } else {
             redirect('users-create.php','Algo salio mal.');
-        }
+        } 
 
 
 
@@ -35,6 +45,9 @@ if(isset($_POST['saveUser'])) {
 
 }
 
+/*  
+    * FUNCION PARA ACTUALIZAR USUARIOS
+*/
 if(isset($_POST['updateUser'])) {
 
     $name = validate($_POST['name']);
@@ -42,7 +55,7 @@ if(isset($_POST['updateUser'])) {
     $email = validate($_POST['email']);
     $password = validate($_POST['password']);
     $role = validate($_POST['role']);
-    $is_ban = validate($_POST['is_ban']) == true ? 1:0;
+    $is_ban = isset($_POST['is_ban']) == true ? 1:0;
 
     $userId = validate($_POST['userId']);
     $user = getById('users',$userId);
@@ -55,7 +68,18 @@ if(isset($_POST['updateUser'])) {
 
         $hachedPassword = password_hash($password, PASSWORD_ARGON2I);
 
-        $query = "UPDATE users SET 
+        $data = [
+            'name' => $name,
+            'phone' => $phone,
+            'email' => $email,
+            'password' => $hachedPassword,
+            'is_ban' => $is_ban,
+            'role' => $role
+        ];
+        $result = update('users', $userId, $data);
+        // echo $result;
+
+        /* $query = "UPDATE users SET 
             name='$name',
             phone='$phone',
             email='$email',
@@ -64,7 +88,8 @@ if(isset($_POST['updateUser'])) {
             role='$role' 
             WHERE id='$userId'";
 
-        $result = mysqli_query($conn, $query);
+        $result = mysqli_query($conn, $query); */
+        
         if($result) {
             redirect('users.php','User/Admin Actualizado Exitosamente.');
         } else {
@@ -81,6 +106,9 @@ if(isset($_POST['updateUser'])) {
 
 }
 
+/*  
+    * FUNCION PARA GUARDAR CONFIGURACION
+*/
 if(isset($_POST['saveSetting'])) {
 
     $title = validate($_POST['title']);
@@ -133,6 +161,9 @@ if(isset($_POST['saveSetting'])) {
 
 }
 
+/*  
+    * FUNCION PARA GUARDAR REDES SOCIALES
+*/
 if(isset($_POST['saveSocialMedia'])) {
     
     $name = validate($_POST['name']);
@@ -160,6 +191,9 @@ if(isset($_POST['saveSocialMedia'])) {
 
 }
 
+/*  
+    * FUNCION PARA ACTULIZAR REDES SOCIALES
+*/
 if(isset($_POST['updateSocialMedia'])) {
 
     $name = validate($_POST['name']);

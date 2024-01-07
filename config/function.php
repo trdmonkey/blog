@@ -143,6 +143,53 @@ function deleteQuery($tableName, $id) {
 
 }
 
+/*  
+    * funcion nueva para AGREGAR datos a la tabla USERS usando las funciones superglobales array_columns y array_values 
+*/
+function insert($tableName, $data) {
+
+    global $conn;
+
+    $table = validate($tableName);
+
+    $columns = array_keys($data);
+    $values = array_values($data);
+
+    $finalColumns = implode(',',$columns);
+    $finalValues = "'" . implode("','", $values) . "'";
+    // return $finalValues;
+
+    $query = "INSERT INTO $table ($finalColumns) VALUES ($finalValues)";
+    $result = mysqli_query($conn, $query);
+    return $result;
+
+}
+
+/*  
+    * funcion nueva para ACTUALIZAR datos en la tabla USERS usando las funciones superglobales array_columns y array_values 
+*/
+function update($tableName, $id, $data) {
+
+    global $conn;
+
+    $table = validate($tableName);
+    $id = validate($id);
+
+    $updateColumnValuesData = "";
+    foreach($data as $columns => $values) {
+
+        $updateColumnValuesData .= $columns.'='."'$values', ";
+
+    }
+
+    $finalUpdateData = substr(trim($updateColumnValuesData),0,-1);
+
+    $query = "UPDATE $table SET $finalUpdateData WHERE id='$id' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+    return $result;
+
+}
+
 
 
 

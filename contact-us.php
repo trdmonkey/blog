@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 $pageTitle = "Contactanos";
-include('includes/header.php'); 
+include('includes/header.php');
 
 ?>
 
@@ -14,26 +14,48 @@ include('includes/header.php');
 <div class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                Contact Form
+            <div class="col-md-12">
+
+                <?= alertMessage(); ?>
+
+                <div class="card card-body">
+                    <form action="sendmail.php" method="POST">
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Nombre</label>
+                                <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="Nombre">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Telefono</label>
+                                <input type="number" name="phone" class="form-control" id="inputPassword4" placeholder="Telefono">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Email</label>
+                                <input type="email" name="email" class="form-control" id="inputAddress" placeholder="Correo Electronico">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">Servicio</label>
+                                <input type="text" name="service" class="form-control" id="inputAddress2" placeholder="Servicio requerido">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputCity">Mensaje</label>
+                                <textarea name="message" class="form-control" rows="3"></textarea>
+                                <!-- <input type="text" class="form-control" id="inputCity"> -->
+                            </div>
+                        </div>
+                        <button type="submit" name="contactSubmit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h4 class="footer-heading">Información de Contacto</h4>
-                <hr>
-                <p>Dirección: <?= webSetting('address') ?? ''; ?></p>
-                <p>Email: <?= webSetting('email1') ?? ''; ?>, <?= webSetting('email2') ?? ''; ?></p>
-                <p>Telefono: <?= webSetting('phone1') ?? ''; ?>, <?= webSetting('phone2') ?? ''; ?></p>
-            </div>
+            
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 <?php include('includes/footer.php'); ?>
 
 
